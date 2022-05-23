@@ -9,7 +9,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=b5ec61ada91a1aad4812666edfd8c57e"
 DEPENDS = "gstreamer1.0 gstreamer1.0-plugins-base r2inference opencv"
 
 SRCBRANCH ?= "main"
-SRCREV = "f8448549fe9f76d12370574a437a96bb59ee5f44"
+SRCREV = "62b49f4c4ee09827cf52159e8b3d45074f3bc497"
 SRC_URI = "git://gitlab.com/mediatek/aiot/team-mtk-aiot-sw-ss2/gst-inference.git;protocol=https;branch=${SRCBRANCH}"
 
 S = "${WORKDIR}/git"
@@ -22,8 +22,8 @@ do_install:append() {
     install -m 644 ${S}/gstinference_example/image_classification/* ${D}${datadir}/gstinference_example/image_classification
 }
 
-FILES_${PN} += "${libdir}/gstreamer-1.0/libgstinferenceoverlayplugin.so"
-FILES_${PN} += "${libdir}/gstreamer-1.0/libgstinference.so"
+FILES:${PN} += "${libdir}/gstreamer-1.0/libgstinferenceoverlayplugin.so"
+FILES:${PN} += "${libdir}/gstreamer-1.0/libgstinference.so"
 
-FILES_${PN} += "${datadir}/*"
+FILES:${PN} += "${datadir}/*"
 inherit meson pkgconfig
