@@ -11,7 +11,7 @@ DEPENDS = "glib-2.0 tensorflow-lite flatbuffers"
 
 SRCBRANCH ?= "main"
 SRCREV = "dd4ef8450d4190450293c38d806bc80fa4044f7f"
-SRC_URI = "git://gitlab.com/mediatek/aiot/team-mtk-aiot-sw-ss2/r2inference.git;protocol=https;branch=${SRCBRANCH}"
+SRC_URI = "${AIOT_RITY_URI}/r2inference.git;protocol=ssh;branch=${SRCBRANCH}"
 
 EXTRA_OEMESON += " -Denable-tflite=true -Denable-tests=disabled -Denable-docs=disabled "
 
