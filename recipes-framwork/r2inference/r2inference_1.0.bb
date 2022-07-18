@@ -6,8 +6,7 @@ LICENSE = "LGPL2.1"
 
 LIC_FILES_CHKSUM = "file://COPYING;md5=a079f37f0484c6a88e7b23a94d6326c5"
 
-
-DEPENDS = "glib-2.0 tensorflow-lite flatbuffers"
+DEPENDS = "glib-2.0 tensorflow-lite flatbuffers neuropilot-bin"
 
 SRCBRANCH ?= "main"
 SRCREV = "19c52c45b7d2089223e8d04e8be7d87b7e88cf71"
