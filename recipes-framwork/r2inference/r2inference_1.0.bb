@@ -9,7 +9,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=a079f37f0484c6a88e7b23a94d6326c5"
 DEPENDS = "glib-2.0 tensorflow-lite flatbuffers neuropilot-bin"
 
 SRCBRANCH ?= "main"
-SRCREV = "19c52c45b7d2089223e8d04e8be7d87b7e88cf71"
+SRCREV = "81e00bde4f9e42a4db53efbbe2891bd52a802ba4"
 SRC_URI = "${AIOT_RITY_URI}/r2inference.git;protocol=ssh;branch=${SRCBRANCH}"
 
 EXTRA_OEMESON += " -Denable-tflite=true -Denable-neuronrt=true -Denable-tests=disabled -Denable-docs=disabled "
