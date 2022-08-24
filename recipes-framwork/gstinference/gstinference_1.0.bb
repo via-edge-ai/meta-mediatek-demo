@@ -9,7 +9,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=b5ec61ada91a1aad4812666edfd8c57e"
 DEPENDS = "gstreamer1.0 gstreamer1.0-plugins-base r2inference opencv"
 
 SRCBRANCH ?= "main"
-SRCREV = "999d16936c6d862d27977c853a62166966e8eef3"
+SRCREV = "de0ce1c18169b18399c365224bf683386257e45e"
 SRC_URI = "${AIOT_RITY_URI}/gst-inference.git;protocol=ssh;branch=${SRCBRANCH}"
 
 S = "${WORKDIR}/git"
