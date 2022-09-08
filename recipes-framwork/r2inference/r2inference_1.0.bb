@@ -6,7 +6,7 @@ LICENSE = "LGPL2.1"
 
 LIC_FILES_CHKSUM = "file://COPYING;md5=a079f37f0484c6a88e7b23a94d6326c5"
 
-DEPENDS = "${@ "glib-2.0 tensorflow-lite flatbuffers neuropilot-bin" if d.getVar('MACHINE') == 'i1200-demo' and d.getVar('NDA_BUILD') == '1' else "glib-2.0 tensorflow-lite flatbuffers" }"
+DEPENDS = "${@ "glib-2.0 tensorflowlite-prebuilt flatbuffers neuropilot-bin" if d.getVar('MACHINE') == 'i1200-demo' and d.getVar('NDA_BUILD') == '1' else "glib-2.0 tensorflowlite-prebuilt flatbuffers" }"
 
 SRCBRANCH ?= "main"
 SRCREV = "02fd3e8cfad00f4d93c2772bfb64ceca4268fe79"
