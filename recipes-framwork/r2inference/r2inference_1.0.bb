@@ -10,7 +10,7 @@ DEPENDS = "${@ "glib-2.0 flatbuffers neuropilot-bin" if d.getVar('MACHINE') == '
 DEPENDS += "${@ "tensorflowlite-prebuilt" if d.getVar('TFLITE_PREBUILT') == '1' else "tensorflow-lite" }"
 
 SRCBRANCH ?= "main"
-SRCREV = "02fd3e8cfad00f4d93c2772bfb64ceca4268fe79"
+SRCREV = "bd06ad0ad23a7f189e13a3437fea6350142ae730"
 SRC_URI = "${AIOT_RITY_URI}/r2inference.git;protocol=ssh;branch=${SRCBRANCH}"
 
 EXTRA_OEMESON += "${@ " -Denable-tflite=true -Denable-neuronrt=true -Denable-tests=disabled -Denable-docs=disabled " if d.getVar('MACHINE') == 'i1200-demo' and d.getVar('NDA_BUILD') == '1' else " -Denable-tflite=true  -Denable-tests=disabled -Denable-docs=disabled " }"
