@@ -11,7 +11,7 @@ DEPENDS += "${@ "tensorflowlite-prebuilt" if d.getVar('TFLITE_PREBUILT') == '1' 
 
 SRCBRANCH ?= "main"
 SRCREV = "bd06ad0ad23a7f189e13a3437fea6350142ae730"
-SRC_URI = "${AIOT_RITY_URI}/r2inference.git;protocol=ssh;branch=${SRCBRANCH}"
+SRC_URI = "${AIOT_RITY_URI}/r2inference.git;protocol=https;branch=${SRCBRANCH}"
 
 EXTRA_OEMESON += "${@ " -Denable-tflite=true -Denable-neuronrt=true -Denable-tests=disabled -Denable-docs=disabled " if d.getVar('MACHINE') == 'i1200-demo' and d.getVar('NDA_BUILD') == '1' else " -Denable-tflite=true  -Denable-tests=disabled -Denable-docs=disabled " }"
 

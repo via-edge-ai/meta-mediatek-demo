@@ -10,7 +10,7 @@ DEPENDS = "gstreamer1.0 gstreamer1.0-plugins-base r2inference opencv"
 
 SRCBRANCH ?= "main"
 SRCREV = "de0ce1c18169b18399c365224bf683386257e45e"
-SRC_URI = "${AIOT_RITY_URI}/gst-inference.git;protocol=ssh;branch=${SRCBRANCH}"
+SRC_URI = "${AIOT_RITY_URI}/gst-inference.git;protocol=https;branch=${SRCBRANCH}"
 
 S = "${WORKDIR}/git"
 
