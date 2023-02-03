@@ -6,14 +6,16 @@ LICENSE = "LGPL2.1"
 
 LIC_FILES_CHKSUM = "file://COPYING;md5=a079f37f0484c6a88e7b23a94d6326c5"
 
-DEPENDS = "${@ "glib-2.0 flatbuffers virtual/libneuron" if d.getVar('MACHINE') == 'i1200-demo' and d.getVar('NDA_BUILD') == '1' else "glib-2.0 flatbuffers" }"
+NEURON_PLATFORM = "${@bb.utils.contains_any('SOC_FAMILY',  'mt8195 mt8188', '1', '0', d)}"
+
+DEPENDS = "${@ "glib-2.0 flatbuffers virtual/libneuron" if d.getVar('NEURON_PLATFORM') == '1' and d.getVar('NDA_BUILD') == '1' else "glib-2.0 flatbuffers" }"
 DEPENDS += "${@ "tensorflowlite-prebuilt" if d.getVar('TFLITE_PREBUILT') == '1' else "tensorflow-lite" }"
 
 SRCBRANCH ?= "main"
-SRCREV = "ba88144eb974d79e74c31fa9e7d80c9f009f3a37"
+SRCREV = "3bad48f4b0e24826759e7c5a2202e4b618a8d373"
 SRC_URI = "${AIOT_RITY_URI}/r2inference.git;protocol=https;branch=${SRCBRANCH}"
 
-EXTRA_OEMESON += "${@ " -Denable-tflite=true -Denable-neuronrt=true -Denable-tests=disabled -Denable-docs=disabled " if d.getVar('MACHINE') == 'i1200-demo' and d.getVar('NDA_BUILD') == '1' else " -Denable-tflite=true  -Denable-tests=disabled -Denable-docs=disabled " }"
+EXTRA_OEMESON += "${@ " -Denable-tflite=true -Denable-neuronrt=true -Denable-tests=disabled -Denable-docs=disabled " if d.getVar('NEURON_PLATFORM') == '1' and d.getVar('NDA_BUILD') == '1' else " -Denable-tflite=true  -Denable-tests=disabled -Denable-docs=disabled " }"
 
 S = "${WORKDIR}/git"
 
