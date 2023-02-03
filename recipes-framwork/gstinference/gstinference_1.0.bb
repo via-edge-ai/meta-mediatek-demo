@@ -9,7 +9,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=b5ec61ada91a1aad4812666edfd8c57e"
 DEPENDS = "gstreamer1.0 gstreamer1.0-plugins-base r2inference opencv"
 
 SRCBRANCH ?= "main"
-SRCREV = "de0ce1c18169b18399c365224bf683386257e45e"
+SRCREV = "d6a16e36232ba2adc653860c2a5642606537538d"
 SRC_URI = "${AIOT_RITY_URI}/gst-inference.git;protocol=https;branch=${SRCBRANCH}"
 
 S = "${WORKDIR}/git"
@@ -18,8 +18,15 @@ do_install:append() {
     install -d ${D}${datadir}/gstinference_example
     install -d ${D}${datadir}/gstinference_example/object_detection
     install -d ${D}${datadir}/gstinference_example/image_classification
-    install -m 644 ${S}/gstinference_example/object_detection/* ${D}${datadir}/gstinference_example/object_detection
-    install -m 644 ${S}/gstinference_example/image_classification/* ${D}${datadir}/gstinference_example/image_classification
+
+    install -m 644 ${S}/gstinference_example/object_detection/labels_pascal.txt ${D}${datadir}/gstinference_example/object_detection
+    install -m 644 ${S}/gstinference_example/object_detection/*.tflite ${D}${datadir}/gstinference_example/object_detection
+    install -m 644 ${S}/gstinference_example/object_detection/${SOC_FAMILY}/*.dla ${D}${datadir}/gstinference_example/object_detection
+
+    install -m 644 ${S}/gstinference_example/image_classification/labels.txt ${D}${datadir}/gstinference_example/image_classification
+    install -m 644 ${S}/gstinference_example/image_classification/*.tflite ${D}${datadir}/gstinference_example/image_classification
+    install -m 644 ${S}/gstinference_example/image_classification/${SOC_FAMILY}/*.dla ${D}${datadir}/gstinference_example/image_classification
+
 }
 
 FILES:${PN} += "${libdir}/gstreamer-1.0/libgstinferenceoverlayplugin.so"
