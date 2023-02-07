@@ -21,11 +21,17 @@ do_install:append() {
 
     install -m 644 ${S}/gstinference_example/object_detection/labels_pascal.txt ${D}${datadir}/gstinference_example/object_detection
     install -m 644 ${S}/gstinference_example/object_detection/*.tflite ${D}${datadir}/gstinference_example/object_detection
-    install -m 644 ${S}/gstinference_example/object_detection/${SOC_FAMILY}/*.dla ${D}${datadir}/gstinference_example/object_detection
+    if [ -d "${S}/gstinference_example/object_detection/${SOC_FAMILY}" ]
+    then
+        install -m 644 ${S}/gstinference_example/object_detection/${SOC_FAMILY}/*.dla ${D}${datadir}/gstinference_example/object_detection
+    fi
 
     install -m 644 ${S}/gstinference_example/image_classification/labels.txt ${D}${datadir}/gstinference_example/image_classification
     install -m 644 ${S}/gstinference_example/image_classification/*.tflite ${D}${datadir}/gstinference_example/image_classification
-    install -m 644 ${S}/gstinference_example/image_classification/${SOC_FAMILY}/*.dla ${D}${datadir}/gstinference_example/image_classification
+    if [ -d "${S}/gstinference_example/image_classification/${SOC_FAMILY}" ]
+    then
+        install -m 644 ${S}/gstinference_example/image_classification/${SOC_FAMILY}/*.dla ${D}${datadir}/gstinference_example/image_classification
+    fi
 
 }
 
