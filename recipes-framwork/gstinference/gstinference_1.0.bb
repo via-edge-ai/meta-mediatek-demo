@@ -2,7 +2,7 @@ SUMMARY = "GstInference"
 DESCRIPTION = "A GStreamer deep learning inference framework"
 HOMEPAGE = "https://developer.ridgerun.com/wiki/index.php?title=GstInference"
 SECTION = "multimedia"
-LICENSE = "LGPL2.1"
+LICENSE = "LGPL-2.1-or-later"
 
 LIC_FILES_CHKSUM = "file://COPYING;md5=b5ec61ada91a1aad4812666edfd8c57e"
 

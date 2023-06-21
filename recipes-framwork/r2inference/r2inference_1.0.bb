@@ -2,7 +2,7 @@ SUMMARY = "RidgeRun's Inference Library"
 DESCRIPTION = "A machine learning library for easy inference integration"
 HOMEPAGE = "https://developer.ridgerun.com/wiki/index.php?title=R2Inference"
 SECTION = "multimedia"
-LICENSE = "LGPL2.1"
+LICENSE = "LGPL-2.1-only"
 
 LIC_FILES_CHKSUM = "file://COPYING;md5=a079f37f0484c6a88e7b23a94d6326c5"
 
