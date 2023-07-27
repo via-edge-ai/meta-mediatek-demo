@@ -12,7 +12,7 @@ DEPENDS = "${@ "glib-2.0 flatbuffers virtual/libneuron" if d.getVar('NEURON_PLAT
 DEPENDS += "${@ "tensorflowlite-prebuilt" if d.getVar('TFLITE_PREBUILT') == '1' else "tensorflow-lite" }"
 
 SRCBRANCH ?= "main"
-SRCREV = "89d6822697a2ff086b4b038f185c92871be76f95"
+SRCREV = "3ef4de2351cd5ca1b44f24ccf2ed08973ee3ca6e"
 SRC_URI = "${AIOT_RITY_URI}/r2inference.git;protocol=https;branch=${SRCBRANCH}"
 
 EXTRA_OEMESON += "${@ " -Denable-tflite=true -Denable-neuronrt=true -Denable-tests=disabled -Denable-docs=disabled " if d.getVar('NEURON_PLATFORM') == '1' and d.getVar('NDA_BUILD') == '1' else " -Denable-tflite=true  -Denable-tests=disabled -Denable-docs=disabled " }"
